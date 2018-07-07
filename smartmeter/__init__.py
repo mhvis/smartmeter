@@ -1,3 +1,3 @@
 name = "smartmeter"
 
-from .smartmeter import SmartMeter
+from .smartmeter import *

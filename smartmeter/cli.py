@@ -1,4 +1,4 @@
-import .smartmeter
+import smartmeter
 import serial
 import argparse
 import pprint
@@ -11,7 +11,7 @@ def cli():
     parser.add_argument("-p", "--port", default="/dev/ttyUSB0",
             help="serial device name, e.g. /dev/ttyUSB0 or COM3")
     parser.add_argument("-c", "--configuration", default="esmr50",
-            choices=["dsmr20", "dsmr42", "esmr50"],
+            choices=["dsmr22", "dsmr40", "dsmr42", "esmr50"],
             help="choose a preset configuration for baudrate, bytesize, parity and stopbits")
     parser.add_argument("--baudrate", type=int)
     parser.add_argument("--bytesize",
@@ -23,7 +23,9 @@ def cli():
     args = parser.parse_args()
 
     # Convert CLI flags to configuration
-    presets = {"dsmr20": smartmeter.DSMR20, "dsmr42": smartmeter.DSMR42,
+    presets = {"dsmr22": smartmeter.DSMR22,
+            "dsmr40": smartmeter.DSMR40,
+            "dsmr42": smartmeter.DSMR42,
             "esmr50": smartmeter.ESMR50}
     configuration = presets[args.configuration]
     if args.baudrate:

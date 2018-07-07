@@ -2,18 +2,16 @@ import serial
 import re
 
 # Possible smart meter configurations
-DSMR20 = {"baudrate": 9600,
+DSMR22 = {"baudrate": 9600,
         "bytesize": serial.SEVENBITS,
         "parity": serial.PARITY_EVEN,
         "stopbits": serial.STOPBITS_ONE}
-DSMR42 = {"baudrate": 115200,
-        "bytesize": serial.SEVENBITS,
-        "parity": serial.PARITY_EVEN,
-        "stopbits": serial.STOPBITS_ONE}
-ESMR50 = {"baudrate": 115200,
+DSMR40 = {"baudrate": 115200,
         "bytesize": serial.EIGHTBITS,
         "parity": serial.PARITY_NONE,
         "stopbits": serial.STOPBITS_ONE}
+DSMR42 = DSMR40
+ESMR50 = DSMR40
 
 class SmartMeter(serial.Serial):
     """Extension of the Serial class that adds a readmeter method."""
