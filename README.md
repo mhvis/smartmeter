@@ -1,6 +1,6 @@
 # smartmeter
 
-Library for reading smart readers that follow Dutch Smart Meter Requirements
+Library for reading smart meters that follow Dutch Smart Meter Requirements
 using a P1 port.
 
 ## As command-line application
